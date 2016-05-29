@@ -1,0 +1,12 @@
+
+name: CleanerChat
+version: 1.0
+description: Allows players to set their own name colour.
+author: RossGosling
+
+main: CleanerChat.Main
+database: false
+
+commands:
+    colour:
+        description: "Displays your colour"
