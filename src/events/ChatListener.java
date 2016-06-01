@@ -8,8 +8,8 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-import CleanerChat.Main;
 import systems.NameColour;
+import uk.co.cherrygoose.cleanerchat.Main;
 
 public class ChatListener implements Listener 
 {
@@ -25,7 +25,7 @@ public class ChatListener implements Listener
         String rawMessage = event.getMessage();
         // Declares empty string for formatted message
         String message = "";
-        
+                
         // Declares message style formatting
         ChatColor playerColour = NameColour.get(player);
         ChatColor msgColour = ChatColor.WHITE;

@@ -8,7 +8,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-import CleanerChat.Main;
+import uk.co.cherrygoose.cleanerchat.Main;
 
 public class QuitListener implements Listener 
 {

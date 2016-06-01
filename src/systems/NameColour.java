@@ -3,7 +3,7 @@ package systems;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
-import CleanerChat.Main;
+import uk.co.cherrygoose.cleanerchat.Main;
 
 public class NameColour 
 {

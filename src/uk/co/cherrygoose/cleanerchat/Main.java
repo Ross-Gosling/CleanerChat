@@ -1,4 +1,4 @@
-package CleanerChat;
+package uk.co.cherrygoose.cleanerchat;
 
 import java.util.List;
 

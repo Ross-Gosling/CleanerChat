@@ -1,10 +1,10 @@
 
 name: CleanerChat
 version: 1.0
-description: Allows players to set their own name colour.
+description: Allows players to set their own name colour and tidies vanilla chat.
 author: RossGosling
 
-main: CleanerChat.Main
+main: uk.co.cherrygoose.cleanerchat.Main
 database: false
 
 commands:

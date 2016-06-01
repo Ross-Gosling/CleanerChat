@@ -12,9 +12,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
-import CleanerChat.Main;
 import systems.NameColour;
 import systems.Utils;
+import uk.co.cherrygoose.cleanerchat.Main;
 
 public class ColourCommand {
 
