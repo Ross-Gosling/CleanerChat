@@ -29,6 +29,6 @@ public class QuitListener implements Listener
     	}
 
     	// Logs to console
-    	Bukkit.getLogger().info("["+Main.pluginName+"]" + player.getName() + " disconnected.");
+    	Bukkit.getLogger().info("["+Main.pluginName+"] " + player.getName() + " disconnected.");
 	}
 }
