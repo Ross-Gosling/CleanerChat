@@ -1,4 +1,4 @@
-package systems;
+package uk.co.cherrygoose.cleanerchat.systems;
 
 public class Utils 
 {

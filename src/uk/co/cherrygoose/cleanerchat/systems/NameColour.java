@@ -1,4 +1,4 @@
-package systems;
+package uk.co.cherrygoose.cleanerchat.systems;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;

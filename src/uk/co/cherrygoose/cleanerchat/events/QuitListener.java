@@ -1,4 +1,4 @@
-package events;
+package uk.co.cherrygoose.cleanerchat.events;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

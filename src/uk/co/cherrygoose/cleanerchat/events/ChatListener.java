@@ -1,4 +1,4 @@
-package events;
+package uk.co.cherrygoose.cleanerchat.events;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -8,8 +8,8 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-import systems.NameColour;
 import uk.co.cherrygoose.cleanerchat.Main;
+import uk.co.cherrygoose.cleanerchat.systems.NameColour;
 
 public class ChatListener implements Listener 
 {

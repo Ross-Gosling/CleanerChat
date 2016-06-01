@@ -9,10 +9,10 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import commands.ColourCommand;
-import events.ChatListener;
-import events.JoinListener;
-import events.QuitListener;
+import uk.co.cherrygoose.cleanerchat.commands.ColourCommand;
+import uk.co.cherrygoose.cleanerchat.events.ChatListener;
+import uk.co.cherrygoose.cleanerchat.events.JoinListener;
+import uk.co.cherrygoose.cleanerchat.events.QuitListener;
 
 public class Main extends JavaPlugin 
 {

@@ -1,4 +1,4 @@
-package commands;
+package uk.co.cherrygoose.cleanerchat.commands;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,9 +12,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
-import systems.NameColour;
-import systems.Utils;
 import uk.co.cherrygoose.cleanerchat.Main;
+import uk.co.cherrygoose.cleanerchat.systems.NameColour;
+import uk.co.cherrygoose.cleanerchat.systems.Utils;
 
 public class ColourCommand {
 
