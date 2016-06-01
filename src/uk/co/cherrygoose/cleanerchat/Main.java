@@ -13,6 +13,7 @@ import uk.co.cherrygoose.cleanerchat.commands.ColourCommand;
 import uk.co.cherrygoose.cleanerchat.events.ChatListener;
 import uk.co.cherrygoose.cleanerchat.events.JoinListener;
 import uk.co.cherrygoose.cleanerchat.events.QuitListener;
+import uk.co.cherrygoose.cleanerchat.systems.NameColour;
 
 public class Main extends JavaPlugin 
 {
@@ -42,6 +43,9 @@ public class Main extends JavaPlugin
     @Override
     public void onDisable() 
     {
+		// Saves config
+		plugin.saveConfig();
+
     	// Logs to console
     	Bukkit.getLogger().info("["+pluginName+"] Disabled");
     }
