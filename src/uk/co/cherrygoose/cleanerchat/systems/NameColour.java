@@ -26,7 +26,8 @@ public class NameColour
 		}
 		catch(NullPointerException e)
 		{
-			return  ChatColor.WHITE;
+			// Return default value
+			return ChatColor.WHITE;
 		}
 	}
 }
