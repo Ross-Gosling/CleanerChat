@@ -1,11 +1,13 @@
 package uk.co.cherrygoose.cleanerchat;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -13,14 +15,15 @@ import uk.co.cherrygoose.cleanerchat.commands.ColourCommand;
 import uk.co.cherrygoose.cleanerchat.events.ChatListener;
 import uk.co.cherrygoose.cleanerchat.events.JoinListener;
 import uk.co.cherrygoose.cleanerchat.events.QuitListener;
-import uk.co.cherrygoose.cleanerchat.systems.NameColour;
 
 public class Main extends JavaPlugin 
 {
 	// Plugin for referencing in use
     private static Plugin plugin;
     public static String pluginName;
-    
+	// YamlConfiguration for player data storage
+	private static YamlConfiguration playerDataFile = new YamlConfiguration();
+	
     @Override
     public void onEnable() 
     {
@@ -30,7 +33,10 @@ public class Main extends JavaPlugin
 		    	
 		// Creates a config
 		plugin.saveDefaultConfig();
-	    
+
+		// Loads playerData yaml file
+		playerDataFile = loadYml("plugins/" + pluginName + "/playerdata.yml");
+		
 		// Registers all event listeners
 		Bukkit.getServer().getPluginManager().registerEvents(new ChatListener(), plugin);
 		Bukkit.getServer().getPluginManager().registerEvents(new JoinListener(), plugin);
@@ -43,8 +49,8 @@ public class Main extends JavaPlugin
     @Override
     public void onDisable() 
     {
-		// Saves config
-		plugin.saveConfig();
+		// Saves player data
+		saveYml(playerDataFile, "plugins/" + pluginName + "/playerdata.yml");
 
     	// Logs to console
     	Bukkit.getLogger().info("["+pluginName+"] Disabled");
@@ -82,5 +88,52 @@ public class Main extends JavaPlugin
     {
     	// Returns plugin
     	return plugin;
+    }
+    public static YamlConfiguration playerdata()
+    {
+    	// Returns yaml
+    	return playerDataFile;
+    }    
+    
+    public static YamlConfiguration loadYml(String sDirectory)
+    {  
+        YamlConfiguration yml = new YamlConfiguration();
+        
+        try
+        {
+            yml.load(sDirectory);
+        }
+        catch(FileNotFoundException e)
+        {
+            try
+            {
+                yml.save(sDirectory);//Create the file if it didn't exist
+            }
+            catch(Exception e2)
+            {
+            	e.printStackTrace();
+            }
+        }
+        catch(Exception e)
+        {
+        	e.printStackTrace();
+        }
+        
+        return yml;
+    }
+
+    public static boolean saveYml(YamlConfiguration ymlConfig, String sDirectory)
+    {
+        try
+        {
+        	ymlConfig.save(sDirectory);
+            return true;
+        }
+        catch(Exception e)
+        {
+        	e.printStackTrace();
+        }
+        
+        return false;
     }
 }

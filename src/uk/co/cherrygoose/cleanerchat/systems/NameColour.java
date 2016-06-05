@@ -13,19 +13,20 @@ public class NameColour
 		player.setPlayerListName(colour + player.getName());
 		
 		// Sets name colour of Player in config
-		Main.config().set("PlayerData." + player.getUniqueId() + ".NameColour", colour.name());
+		Main.playerdata().set(player.getUniqueId() + ".NameColour", colour.name());
 	}
 	
 	public static ChatColor get(Player player)
 	{
-		// If nameColour is not null
-		if (Main.config().getString("PlayerData." + player.getUniqueId() + ".NameColour") != null)
+		// If nameColour exists
+		try
 		{
 			// Return name colour of Player
-			return ChatColor.valueOf(Main.config().getString("PlayerData." + player.getUniqueId() + ".NameColour"));
+			return ChatColor.valueOf(Main.playerdata().getString(player.getUniqueId() + ".NameColour"));
 		}
-		
-		// Else return reset colour
-		return ChatColor.RESET;
+		catch(NullPointerException e)
+		{
+			return  ChatColor.WHITE;
+		}
 	}
 }
