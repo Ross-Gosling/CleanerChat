@@ -10,3 +10,5 @@ database: false
 commands:
     colour:
         description: "Displays your colour"
+    notify:
+        description: "Toggles chat notification"

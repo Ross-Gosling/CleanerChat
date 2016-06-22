@@ -2,6 +2,7 @@ package uk.co.cherrygoose.cleanerchat.events;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -10,6 +11,7 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import uk.co.cherrygoose.cleanerchat.Main;
 import uk.co.cherrygoose.cleanerchat.systems.NameColour;
+import uk.co.cherrygoose.cleanerchat.systems.Notification;
 
 public class ChatListener implements Listener 
 {
@@ -39,6 +41,13 @@ public class ChatListener implements Listener
     	{
     		// Sends recipient the message
     		recipient.sendMessage(message);
+    		
+    		// If recipient has notifications and is not the sender
+    		if((Notification.getNotify(recipient)) && (recipient != player))
+    		{
+				// Sends player audible feedback
+    			recipient.playSound(recipient.getLocation(), Sound.BLOCK_NOTE_PLING, 1.0f, 1.0f);
+    		}
     	}
     	
     	// Logs to console

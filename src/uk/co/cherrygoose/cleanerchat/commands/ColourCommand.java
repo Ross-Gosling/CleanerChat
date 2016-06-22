@@ -16,8 +16,8 @@ import uk.co.cherrygoose.cleanerchat.Main;
 import uk.co.cherrygoose.cleanerchat.systems.NameColour;
 import uk.co.cherrygoose.cleanerchat.systems.Utils;
 
-public class ColourCommand {
-
+public class ColourCommand 
+{
 	public static boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) 
 	{		
     	// If sender is a player

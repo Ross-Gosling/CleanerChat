@@ -12,6 +12,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import uk.co.cherrygoose.cleanerchat.commands.ColourCommand;
+import uk.co.cherrygoose.cleanerchat.commands.NotifyCommand;
 import uk.co.cherrygoose.cleanerchat.events.ChatListener;
 import uk.co.cherrygoose.cleanerchat.events.JoinListener;
 import uk.co.cherrygoose.cleanerchat.events.QuitListener;
@@ -59,10 +60,16 @@ public class Main extends JavaPlugin
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) 
     {
-    	// If "deathcooldown" command
+    	// If "colour" command
 		if(cmd.getName().equalsIgnoreCase("colour"))
 		{
 			return ColourCommand.onCommand(sender, cmd, commandLabel, args);
+		}
+		
+    	// If "notify" command
+		if(cmd.getName().equalsIgnoreCase("notify"))
+		{
+			return NotifyCommand.onCommand(sender, cmd, commandLabel, args);
 		}
 		
     	return false;
@@ -70,10 +77,16 @@ public class Main extends JavaPlugin
     @Override
     public List<String> onTabComplete(CommandSender sender, Command cmd, String commandLabel, String[] args)
     {
-    	// If "deathcooldown" command
+    	// If "colour" command
 		if(cmd.getName().equalsIgnoreCase("colour"))
 		{
 			return ColourCommand.onTabComplete(sender, cmd, commandLabel, args);
+		}
+		
+    	// If "notify" command
+		if(cmd.getName().equalsIgnoreCase("notify"))
+		{
+			return NotifyCommand.onTabComplete(sender, cmd, commandLabel, args);
 		}
 		
 		return null;
